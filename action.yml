@@ -27,7 +27,10 @@ inputs:
     description: Specific version of pretty-quick (by default, use the latest version)
     required: false
     default: false
-
+  pretty_quick_version:
+    description: Specific the root from where pretty-quick is run
+    required: false
+    default: "."
 runs:
   using: "docker"
   image: "Dockerfile"
