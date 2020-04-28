@@ -35,6 +35,8 @@ _git_push() {
     fi
 }
 
+cd $INPUT_ROOT
+
 # PROGRAM
 echo "Installing prettier..."
 if "$INPUT_PRETTIER_VERSION"; then

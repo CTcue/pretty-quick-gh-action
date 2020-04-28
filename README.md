@@ -13,15 +13,13 @@ A GitHub action for styling files with [prettier](https://prettier.io) by means 
 
 ### Parameters
 
-| Parameter        |      Required      |      Default      | Description                                                                                               |
-| ---------------- | :----------------: | :---------------: | --------------------------------------------------------------------------------------------------------- |
-| dry              |        :x:         |       False       | Runs the action in dry mode. Files wont get changed and the action fails if there are unprettified files. |
-| prettier_version |        :x:         |       False       | Specific prettier version (by default use latest)                                                         |
-| prettier_options |        :x:         | `--write **/*.js` | Prettier options (by default it applies to the whole repository)                                          |
-| commit_options   |        :x:         |         -         | Custom git commit options                                                                                 |
-| commit_message   |        :x:         | Prettified Code!  | Custom git commit message                                                                                 |
-| file_pattern     |        :x:         |        \*         | Custom git add file pattern                                                                               |
-| branch           | :white_check_mark: |         -         | Always set this to `${{ github.head_ref }}` in order to work both with pull requests and push events      |
+| Parameter            |      Required      |      Default      | Description                                                                                          |
+| -------------------- | :----------------: | :---------------: | ---------------------------------------------------------------------------------------------------- |
+| branch               | :white_check_mark: |         -         | Always set this to `${{ github.head_ref }}` in order to work both with pull requests and push events |
+| prettier_version     |        :x:         |       False       | Specific prettier version (by default use latest)                                                    |
+| pretty_quick_version |        :x:         |       False       | Specific pretty-quick version (by default use latest)                                                |
+| pretty_quick_options |        :x:         | `--write **/*.js` | Prettier options (by default it applies to the whole repository)                                     |
+| root                 |        :x:         |        "."        | The root from where `pretty-quick` is run                                                            |
 
 ### Example Config
 
