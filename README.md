@@ -13,13 +13,13 @@ A GitHub action for styling files with [prettier](https://prettier.io) by means 
 
 ### Parameters
 
-| Parameter            |      Required      |      Default      | Description                                                                                          |
-| -------------------- | :----------------: | :---------------: | ---------------------------------------------------------------------------------------------------- |
-| branch               | :white_check_mark: |         -         | Always set this to `${{ github.head_ref }}` in order to work both with pull requests and push events |
-| prettier_version     |        :x:         |       False       | Specific prettier version (by default use latest)                                                    |
-| pretty_quick_version |        :x:         |       False       | Specific pretty-quick version (by default use latest)                                                |
-| pretty_quick_options |        :x:         | `--write **/*.js` | Prettier options (by default it applies to the whole repository)                                     |
-| root                 |        :x:         |        "."        | The root from where `pretty-quick` is run                                                            |
+| Parameter            |      Required      | Default | Description                                                                                          |
+| -------------------- | :----------------: | :-----: | ---------------------------------------------------------------------------------------------------- |
+| branch               | :white_check_mark: |    -    | Always set this to `${{ github.head_ref }}` in order to work both with pull requests and push events |
+| prettier_version     |        :x:         |  False  | Specific prettier version (by default use latest)                                                    |
+| pretty_quick_version |        :x:         |  False  | Specific pretty-quick version (by default use latest)                                                |
+| pretty_quick_options |        :x:         |   ""    | Prettier options (by default it applies to the whole repository)                                     |
+| root                 |        :x:         |   "."   | The root from where `pretty-quick` is run                                                            |
 
 ### Example Config
 

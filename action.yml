@@ -4,21 +4,9 @@ description: Automatically runs pretty-quick on all your changes.
 author: Conrad Großer <grosserconrad@gmail.com>, Tim van Mourik <timvanmourik@gmail.com>
 
 inputs:
-  file_pattern:
-    description: File pattern used for `git add`
-    required: false
-    default: "*"
-  prettier_options:
-    description: Options for the `prettier` command
-    required: false
-    default: "--write **/*.js"
   branch:
     description: Target branch for the changes
     required: true
-  dry:
-    description: Running the script in dry mode just shows whether there are files that should be prettified or not
-    required: false
-    default: false
   prettier_version:
     description: Specific version of prettier (by default, use the latest version)
     required: false
@@ -27,10 +15,15 @@ inputs:
     description: Specific version of pretty-quick (by default, use the latest version)
     required: false
     default: false
-  pretty_quick_version:
+  pretty_quick_options:
+    description: Options for the `prettier` command
+    required: false
+    default: "--write **/*.js"
+  root:
     description: Specific the root from where pretty-quick is run
     required: false
     default: "."
+
 runs:
   using: "docker"
   image: "Dockerfile"

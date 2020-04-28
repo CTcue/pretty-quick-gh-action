@@ -18,7 +18,7 @@ else
 fi
 
 cd $INPUT_ROOT
-echo "Working directory: ${INPUT_ROOT}"
+echo "Working directory: ${PWD}"
 
 echo "Prettifing files..."
 pretty-quick $INPUT_PRETTY_QUICK_OPTIONS
