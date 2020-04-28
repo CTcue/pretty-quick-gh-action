@@ -42,30 +42,21 @@ if "$INPUT_PRETTIER_VERSION"; then
 else
   npm install --silent --global prettier
 fi
+echo "Installing pretty-quick..."
+if "$INPUT_PRETTIER_VERSION"; then
+  npm install --silent --global pretty-quick@$INPUT_PRETTY_QUICK_VERSION
+else
+  npm install --silent --global pretty-quick
+fi
 
 echo "Prettifing files..."
 echo "Files:"
-prettier $INPUT_PRETTIER_OPTIONS || echo "Problem running prettier with $INPUT_PRETTIER_OPTIONS"
+pretty-quick $INPUT_PRETTIER_OPTIONS || echo "Problem running prettier with $INPUT_PRETTIER_OPTIONS"
 
 # To keep runtime good, just continue if something was changed
 if _git_changed;
-then
-  if $INPUT_DRY; then
-    echo "Prettier found unpretty files!"
-    exit 1
-  else
-    # Calling method to configure the git environemnt
-    _git_setup
-    echo "Commiting and pushing changes..."
-    # Switch to the actual branch
-    git checkout $INPUT_BRANCH || echo "Problem checking out the specified branch: $INPUT_BRANCH"
-    # Add changes to git
-    git add "${INPUT_FILE_PATTERN}" || echo "Problem adding your files with pattern ${INPUT_FILE_PATTERN}"
-    # Commit and push changes back
-    git commit -m "$INPUT_COMMIT_MESSAGE" --author="$GITHUB_ACTOR <$GITHUB_ACTOR@users.noreply.github.com>" ${INPUT_COMMIT_OPTIONS:+"$INPUT_COMMIT_OPTIONS"}
-    _git_push
-    echo "Changes pushed successfully."
-  fi
+  echo "Prettier found unpretty files!"
+  exit 1
 else
   echo "Nothing to commit. Exiting."
 fi

@@ -4,21 +4,14 @@ description: Automatically runs prettier on all your changes.
 author: Conrad Großer <grosserconrad@gmail.com>
 
 inputs:
-  commit_message:
-    description: Commit message
-    required: false
-    default: 'Prettified Code!'
-  commit_options:
-    description: Commit options
-    required: false
   file_pattern:
     description: File pattern used for `git add`
     required: false
-    default: '*'
+    default: "*"
   prettier_options:
     description: Options for the `prettier` command
     required: false
-    default: '--write **/*.js'
+    default: "--write **/*.js"
   branch:
     description: Target branch for the changes
     required: true
@@ -27,14 +20,18 @@ inputs:
     required: false
     default: false
   prettier_version:
-    description: Specific version of prettier (by default just use the latest version)
+    description: Specific version of prettier (by default, use the latest version)
+    required: false
+    default: false
+  pretty_quick_version:
+    description: Specific version of pretty-quick (by default, use the latest version)
     required: false
     default: false
 
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: "docker"
+  image: "Dockerfile"
 
 branding:
-  icon: 'award'
-  color: 'green'
+  icon: "award"
+  color: "green"
