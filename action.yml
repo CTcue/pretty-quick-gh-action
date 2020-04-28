@@ -1,7 +1,7 @@
-name: Prettier Action
-description: Automatically runs prettier on all your changes.
+name: pretty-quick GitHub Action
+description: Automatically runs pretty-quick on all your changes.
 
-author: Conrad Großer <grosserconrad@gmail.com>
+author: Conrad Großer <grosserconrad@gmail.com>, Tim van Mourik <timvanmourik@gmail.com>
 
 inputs:
   file_pattern:
