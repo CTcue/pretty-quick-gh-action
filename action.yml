@@ -4,9 +4,6 @@ description: Automatically runs pretty-quick on all your changes.
 author: Conrad Großer <grosserconrad@gmail.com>, Tim van Mourik <timvanmourik@gmail.com>
 
 inputs:
-  branch:
-    description: Target branch for the changes
-    required: true
   prettier_version:
     description: Specific version of prettier (by default, use the latest version)
     required: false

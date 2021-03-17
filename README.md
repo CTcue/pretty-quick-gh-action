@@ -13,13 +13,12 @@ A GitHub action for styling files with [prettier](https://prettier.io) by means 
 
 ### Parameters
 
-| Parameter            |      Required      | Default | Description                                                                                          |
-| -------------------- | :----------------: | :-----: | ---------------------------------------------------------------------------------------------------- |
-| branch               | :white_check_mark: |    -    | Always set this to `${{ github.head_ref }}` in order to work both with pull requests and push events |
-| prettier_version     |        :x:         |  False  | Specific prettier version (by default use latest)                                                    |
-| pretty_quick_version |        :x:         |  False  | Specific pretty-quick version (by default use latest)                                                |
-| pretty_quick_options |        :x:         |   ""    | Prettier options (by default it applies to the whole repository)                                     |
-| root                 |        :x:         |   "."   | The root from where `pretty-quick` is run                                                            |
+| Parameter            | Required | Default | Description                                                      |
+| -------------------- | :------: | :-----: | ---------------------------------------------------------------- |
+| prettier_version     |   :x:    |  False  | Specific prettier version (by default use latest)                |
+| pretty_quick_version |   :x:    |  False  | Specific pretty-quick version (by default use latest)            |
+| pretty_quick_options |   :x:    |   ""    | Prettier options (by default it applies to the whole repository) |
+| root                 |   :x:    |   "."   | The root from where `pretty-quick` is run                        |
 
 ### Example Config
 
@@ -47,13 +46,12 @@ jobs:
       - name: Prettify code
         uses: TimVanMourik/pretty-quick-gh-action@v1.0
         with:
-          # Push back to the same branch that was checked out
-          branch: ${{ github.head_ref }}
+          prettier_version: 2.2.1
+          pretty_quick_version: 3.1.0
           # This part is also where you can pass other options, for example:
           prettier_options: --write **/*.{js,md}
+          root: .
 ```
-
-More documentation for writing a workflow can be found [here](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions).
 
 ## Issues
 
