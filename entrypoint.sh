@@ -5,16 +5,17 @@ set -eu
 
 # PROGRAM
 echo "Installing prettier..."
-if "$INPUT_PRETTIER_VERSION"; then
-  npm install --silent --global prettier@$INPUT_PRETTIER_VERSION
-else
+if [ -z "$INPUT_PRETTIER_VERSION" ]; then
   npm install --silent --global prettier
-fi
-echo "Installing pretty-quick..."
-if "$INPUT_PRETTIER_VERSION"; then
-  npm install --silent --global pretty-quick@$INPUT_PRETTY_QUICK_VERSION
 else
+  npm install --silent --global prettier@$INPUT_PRETTIER_VERSION
+fi
+
+echo "Installing pretty-quick..."
+if [ -z "$INPUT_PRETTY_QUICK_VERSION" ]; then
   npm install --silent --global pretty-quick
+else
+  npm install --silent --global pretty-quick@$INPUT_PRETTY_QUICK_VERSION
 fi
 
 cd $INPUT_ROOT
