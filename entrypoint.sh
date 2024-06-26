@@ -21,5 +21,5 @@ fi
 cd $INPUT_ROOT
 echo "Working directory: ${PWD}"
 
-echo "Prettifing files..."
+echo "Testing prettier"
 pretty-quick $INPUT_PRETTY_QUICK_OPTIONS

@@ -1,7 +1,6 @@
 name: pretty-quick GitHub Action
 description: Automatically runs pretty-quick on all your changes.
-
-author: Conrad Großer <grosserconrad@gmail.com>, Tim van Mourik <timvanmourik@gmail.com>
+author: CTcue <ctcue-dev-teams@iqvia.com>
 
 inputs:
   prettier_version:
@@ -13,9 +12,9 @@ inputs:
     required: false
     default: false
   pretty_quick_options:
-    description: Options for the `prettier` command
+    description: Options for the `pretty-quick` command
     required: false
-    default: "--write **/*.js"
+    default: ""
   root:
     description: Specific the root from where pretty-quick is run
     required: false
