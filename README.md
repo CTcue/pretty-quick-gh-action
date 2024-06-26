@@ -44,15 +44,17 @@ jobs:
           ref: ${{ github.head_ref }}
 
       - name: Prettify code
-        uses: TimVanMourik/pretty-quick-gh-action@v1.0
+        uses: CTcue/pretty-quick-gh-action@v1.4
         with:
-          prettier_version: 2.2.1
-          pretty_quick_version: 3.1.0
+          prettier_version: 3.3.2
+          pretty_quick_version: 4.0.0
           # This part is also where you can pass other options, for example:
-          prettier_options: --write **/*.{js,md}
+          prettier_options: --write **/*.{ts,md}
           root: .
 ```
 
-## Issues
+## Update action
 
-Please report all bugs and feature request using the [GitHub issues function](https://github.com/TimVanMourik/pretty-quick-gh-action/issues/new). Thanks!
+* Create PR and review
+* Once merged add a new version tag
+* Reference new version in workflows
